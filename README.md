@@ -2,7 +2,7 @@
 
 ## Descrição do Projeto
 
-O projeto **Desafio RentDelivery** é uma API backend desenvolvida em .NET 6 com C# para gerenciar o aluguel de motos e entregadores. A aplicação permite registrar entregadores, motos, aluguéis, e controlar as entregas realizadas pelos entregadores com motos alugadas. O projeto foi desenvolvido seguindo as melhores práticas de arquitetura de software e padrões de design, como Domain-Driven Design (DDD), além de integrar logs e tratamento de erros utilizando Serilog e RabbitMQ para comunicação assíncrona.
+O projeto **Desafio RentDelivery** é uma API backend desenvolvida em .NET 8 com C# para gerenciar o aluguel de motos e entregadores. A aplicação permite registrar entregadores, motos, aluguéis, e controlar as entregas realizadas pelos entregadores com motos alugadas. O projeto foi desenvolvido seguindo as melhores práticas de arquitetura de software e padrões de design, como Domain-Driven Design (DDD), além de integrar logs e tratamento de erros utilizando Serilog e RabbitMQ para comunicação assíncrona.
 
 ## Requisitos Atendidos
 
