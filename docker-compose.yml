@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: rentdelivery_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: rentdeliverydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mongo:
+    image: mongo:6
+    container_name: rentdelivery_mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: yourpassword
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  api:
+    image: rentdelivery_api
+    container_name: rentdelivery_api
+    build:
+      context: .
+      dockerfile: src/DesafioRentDelivery.API/Dockerfile
+    depends_on:
+      - postgres
+      - mongo
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__PostgreSqlConnection: "Host=postgres;Database=rentdeliverydb;Username=postgres;Password=yourpassword"
+      MongoDbSettings__ConnectionString: "mongodb://mongo:yourpassword@mongo:27017"
+      MongoDbSettings__DatabaseName: "RentDeliveryDb"
+    ports:
+      - "8080:80"
+    networks:
+      - rentdelivery_network
+
+volumes:
+  postgres_data:
+  mongo_data:
+
+networks:
+  rentdelivery_network:
+    driver: bridge

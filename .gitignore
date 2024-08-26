@@ -3,3 +3,15 @@
 ################################################################################
 
 /.vs
+/src/DesafioRentDelivery.API/bin/Debug/net8.0
+/src/DesafioRentDelivery.API/obj
+/src/DesafioRentDelivery.Application/bin/Debug/net8.0
+/src/DesafioRentDelivery.Application/obj
+/src/DesafioRentDelivery.Domain/bin/Debug/net8.0
+/src/DesafioRentDelivery.Domain/obj
+/src/DesafioRentDelivery.Infrastructure/bin/Debug/net8.0
+/tests/DesafioRentDelivery.IntegrationTests/bin/Debug
+/tests/DesafioRentDelivery.IntegrationTests/obj
+/tests/DesafioRentDelivery.UnitTests/bin/Debug/net8.0
+/tests/DesafioRentDelivery.UnitTests/obj
+/src/DesafioRentDelivery.Infrastructure/obj
