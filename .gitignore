@@ -15,3 +15,7 @@
 /tests/DesafioRentDelivery.UnitTests/bin/Debug/net8.0
 /tests/DesafioRentDelivery.UnitTests/obj
 /src/DesafioRentDelivery.Infrastructure/obj
+/src/DesafioRentDelivery.Domain/bin/Debug/net6.0
+/tests/DesafioRentDelivery.UnitTests/bin/Debug/net6.0
+/src/DesafioRentDelivery.API/DesafioRentDelivery.API.csproj.user
+/src/DesafioRentDelivery.API/DesafioRentDelivery.API.csproj.user
