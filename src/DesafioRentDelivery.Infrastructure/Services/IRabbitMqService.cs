@@ -3,6 +3,7 @@ namespace DesafioRentDelivery.Infrastructure.Services
 {
     public interface IRabbitMqService
     {
-        void SendMessage(string message);
+        public void SendMessage(string message);
+        public void Dispose();
     }
 }

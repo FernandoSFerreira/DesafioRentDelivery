@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -52,8 +53,8 @@ builder.Services.AddScoped<IAluguelRepository, AluguelRepository>();
 builder.Services.AddScoped<IMotoService, MotoService>(); 
 builder.Services.AddScoped<IEntregaService, EntregaService>();
 builder.Services.AddScoped<IEntregadorService, EntregadorService>();
-builder.Services.AddScoped<IAluguelService, AluguelService>();
-builder.Services.AddSingleton<RabbitMqService>();
+builder.Services.AddScoped<IAluguelService, AluguelService>(); 
+builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 
 
 builder.Services.AddControllers();

@@ -11,5 +11,7 @@ namespace DesafioRentDelivery.Infrastructure.Configurations
     {
         public string HostName { get; set; } = "localhost";
         public string QueueName { get; set; } = "rent_delivery_queue";
+        public string Username { get; set; } = "guest";
+        public string Password { get; set; } = "guest";
     }
 }

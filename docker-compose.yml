@@ -26,6 +26,19 @@ services:
     ports:
       - "27017:27017"
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rentdelivery_rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: yourpassword
+    ports:
+      - "5672:5672"    # Porta padrão para o RabbitMQ (protocolos AMQP)
+      - "15672:15672"  # Porta para o console de gerenciamento do RabbitMQ
+    networks:
+      - rentdelivery_network
+
   api:
     image: rentdelivery_api
     container_name: rentdelivery_api
@@ -35,11 +48,15 @@ services:
     depends_on:
       - postgres
       - mongo
+      - rabbitmq
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ConnectionStrings__PostgreSqlConnection: "Host=postgres;Database=rentdeliverydb;Username=postgres;Password=yourpassword"
       MongoDbSettings__ConnectionString: "mongodb://mongo:yourpassword@mongo:27017"
       MongoDbSettings__DatabaseName: "RentDeliveryDb"
+      RabbitMqSettings__HostName: "rabbitmq"   # Nome do serviço RabbitMQ
+      RabbitMqSettings__Username: "rabbitmq"
+      RabbitMqSettings__Password: "yourpassword"
     ports:
       - "8080:80"
     networks:

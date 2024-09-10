@@ -24,7 +24,12 @@ namespace DesafioRentDelivery.Infrastructure.Services
             {
                 _logger.LogInformation("Initializing RabbitMQ connection and channel.");
 
-                var factory = new ConnectionFactory() { HostName = _config.HostName };
+                var factory = new ConnectionFactory
+                {
+                    HostName = _config.HostName,
+                    UserName = _config.Username,
+                    Password = _config.Password
+                };
 
                 _connection = factory.CreateConnection();
                 _channel = _connection.CreateModel();
